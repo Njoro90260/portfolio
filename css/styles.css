@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.text {
+    max-width: 500px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.project-item svg.icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+section#projects .project-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+#contact svg.icon {
+    width: 40px;
+    height: 40px;
+}
+
+#contact p {
+    text-align: center;
+}
