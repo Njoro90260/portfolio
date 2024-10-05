@@ -4,7 +4,7 @@ body {
     padding: 0;
     height: 100vh;
     animation: gradient 15s ease infinite;
-    background: linear-gradient(270deg, #4f3b78, #c4bbf0);
+    background: linear-gradient(90deg, #98DED9, #C7FFD8);
     background-size: 400% 400%;
 }
 
@@ -34,18 +34,21 @@ header nav ul li a {
     text-decoration: none;
 }
 .navbar {
-    background-color: #4f3b78;
+    background: linear-gradient(90deg, #0B2F9F, #161D6F);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 .btn {
-    background-color: rgba(128, 0, 128);
+    background-color: #98DED9;
     border-style: solid;
+    border-width: 1px;
+    border-color: white;
     border-radius: 10px;
     color:  #f3f3f3;
     transition: background-color, box-shadow 0.3s ease;
 }
 .btn:hover {
-    background-color: rgba(128, 0, 128);
-    box-shadow: 0 0 20px rgba(128, 0, 128, 1), 0 0 30px rgba(128, 0, 128, 1); /* Glowing effect */
+    background-color: #C7FFD8;
+    box-shadow: 0 0 20px rgba(199, 255, 216, 1), 0 0 30px rgba(128, 0, 128, 1); /* Glowing effect */
     transform: scale(1.05); 
     font-weight: bold;
     color: white;
@@ -60,12 +63,12 @@ header nav ul li a {
 section {
     padding: 2rem;
 }
-/* .about {
-    width: 100%;
-    height: auto;
-    background-color: blue;
-    animation: moveAndChangeColor 3s ease-in-out infinite;
-} */
+.about {
+    background: linear-gradient(90deg, #161D6F, #0B2F9F);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    height: 100%;
+}
 h1 {
     color: white;
     font-size: 3em;
@@ -89,7 +92,9 @@ h2 {
 .text {
     max-width: 500px;
 }
-
+.projects{
+    background-color: #0B2F9F;
+}
 .project-item {
     display: flex;
     align-items: center;
@@ -117,7 +122,7 @@ section#projects .project-item {
     text-align: center;
 }
 footer {
-    background-color: #4f3b78;
+    background: linear-gradient(90deg, #0B2F9F, #161D6F);
     color: white;
 }
 
