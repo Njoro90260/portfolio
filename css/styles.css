@@ -2,7 +2,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    height: 100vh;
+    animation: gradient 15s ease infinite;
+    background: linear-gradient(270deg, #4f3b78, #c4bbf0);
+    background-size: 400% 400%;
 }
 
 header {
@@ -30,11 +33,44 @@ header nav ul li a {
     color: white;
     text-decoration: none;
 }
+.navbar {
+    background-color: #4f3b78;
+}
+.btn {
+    background-color: rgba(128, 0, 128);
+    border-style: solid;
+    border-radius: 10px;
+    color:  #f3f3f3;
+    transition: background-color, box-shadow 0.3s ease;
+}
+.btn:hover {
+    background-color: rgba(128, 0, 128);
+    box-shadow: 0 0 20px rgba(128, 0, 128, 1), 0 0 30px rgba(128, 0, 128, 1); /* Glowing effect */
+    transform: scale(1.05); 
+    font-weight: bold;
+    color: white;
+}
+.nav-item {
+    padding: 5px;
+}
+.nav-item:hover{
+    cursor: pointer;
+}
 
 section {
     padding: 2rem;
 }
-
+/* .about {
+    width: 100%;
+    height: auto;
+    background-color: blue;
+    animation: moveAndChangeColor 3s ease-in-out infinite;
+} */
+h1 {
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 h2 {
     text-align: center;
 }
@@ -79,4 +115,34 @@ section#projects .project-item {
 
 #contact p {
     text-align: center;
+}
+footer {
+    background-color: #4f3b78;
+    color: white;
+}
+
+@keyframes moveAndChangeColor {
+    0% {
+        transform: translateX(0);
+        background-color: blue;
+    }
+    50% {
+        transform: translateX(200px);
+        background-color: red;
+    }
+    100% {
+        transform: translateX(0);
+        background-color: blue;
+    }
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
