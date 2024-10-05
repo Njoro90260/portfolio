@@ -4,8 +4,9 @@ body {
     padding: 0;
     height: 100vh;
     animation: gradient 15s ease infinite;
-    background: linear-gradient(90deg, #98DED9, #C7FFD8);
+    background: linear-gradient(150deg, #161D6F 0%, #161D6F 20%, rgba(196, 187, 240, 1) 50%, #0B2F9F 80%, #0B2F9F 100%);
     background-size: 400% 400%;
+    /* color: #E7E7AA; */
 }
 
 header {
@@ -34,7 +35,7 @@ header nav ul li a {
     text-decoration: none;
 }
 .navbar {
-    background: linear-gradient(90deg, #0B2F9F, #161D6F);
+    background: linear-gradient(150deg, #0B2F9F 0%, #0B2F9F 25%, rgba(196, 187, 240, 1) 50%, #161D6F 75%, #161D6F 100%);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 .btn {
@@ -64,10 +65,19 @@ section {
     padding: 2rem;
 }
 .about {
-    background: linear-gradient(90deg, #161D6F, #0B2F9F);
+    background: linear-gradient(150deg, #161D6F 0%, #161D6F 20%, rgba(196, 187, 240, 1) 50%, #0B2F9F 80%, #0B2F9F 100%);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
-    height: 100%;
+    margin-top: 30px;
+    height: 70vh;
+    /* width: 98%; */
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.about-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 h1 {
     color: white;
@@ -106,6 +116,11 @@ h2 {
     height: 50px;
     margin-right: 1rem;
 }
+#about {
+    /* margin: 0 auto; */
+    max-width: 100;
+}
+
 
 section#projects .project-item {
     border: 1px solid #ddd;
