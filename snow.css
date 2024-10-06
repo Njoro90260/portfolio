@@ -56,3 +56,19 @@ body {
         transform: translateX(0); /* Return to the original position */
     }
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary-color: #cdcdcd;
+    --secondary-color: #fff;
+}
+* {
+    /* some styles. */
+}
+:root {
+    /* some styles. */
+}
