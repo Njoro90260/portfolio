@@ -69,7 +69,13 @@ section {
     padding: 2rem;
 }
 .about {
-    background: linear-gradient(150deg, #161D6F 0%, #161D6F 20%, rgba(196, 187, 240, 1) 50%, #0B2F9F 80%, #0B2F9F 100%);
+    /* background: linear-gradient(150deg, #161D6F 0%, #161D6F 20%, rgba(196, 187, 240, 1) 50%, #0B2F9F 80%, #0B2F9F 100%); */
+    background: 
+        linear-gradient(45deg, #161D6F 25%, transparent 25%),  /* Diagonal from top-left to bottom-right */
+        linear-gradient(-45deg, #0B2F9F 25%, transparent 25%), /* Diagonal from top-right to bottom-left */
+        linear-gradient(150deg, #161D6F 0%, #161D6F 20%, rgba(196, 187, 240, 1) 50%, #0B2F9F 80%, #0B2F9F 100%); /* Main background gradient */
+    background-size: 100% 100%;
+    background-blend-mode: screen;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
     margin-top: 30px;
     height: 70vh;
@@ -78,6 +84,7 @@ section {
     align-items: center;
     border-radius: 10px;
     opacity: 0.7;
+    animation: glow 15s ease-in-out infinite; 
 }
 .about-items {
     display: flex;
@@ -108,7 +115,14 @@ h2 {
     max-width: 500px;
 }
 .projects{
-    background-color: #0B2F9F;
+    background-color: #f3f3f3;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    border-radius: 10px;
+    color: black;
+    z-index: 2;
 }
 .project-item {
     display: flex;
@@ -146,6 +160,77 @@ footer {
     color: white;
 }
 
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure snowflakes don't interfere with page interaction */
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    font-size: 1.5rem;
+    color: white;
+    animation: fall linear infinite, sway ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s, 3s;
+}
+
+.snowflake:nth-child(2) {
+    left: 20%;
+    animation-duration: 8s, 4s;
+}
+
+.snowflake:nth-child(3) {
+    left: 30%;
+    animation-duration: 12s, 5s;
+}
+
+.snowflake:nth-child(4) {
+    left: 40%;
+    animation-duration: 6s, 3s;
+}
+
+.snowflake:nth-child(5) {
+    left: 50%;
+    animation-duration: 14s, 4s;
+}
+
+.snowflake:nth-child(6) {
+    left: 60%;
+    animation-duration: 11s, 5s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes sway {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
 @keyframes moveAndChangeColor {
     0% {
         transform: translateX(0);
@@ -169,5 +254,30 @@ footer {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* Shorter duration for strobe effect */
+/* 
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(245, 245, 220, 1); 
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(199, 255, 216, 1), 0 0 30px rgba(128, 0, 128, 1); 
+    }
+}
+ */
+ @keyframes glow {
+    0%, 100% {
+        box-shadow: none; /* No glow at the start and end */
+    }
+    50% {
+        /* Creating the 'X' effect with two diagonal shadows */
+        box-shadow: 
+            0px 0px 20px rgba(199, 255, 216, 1),  /* Top-left to bottom-right */
+            0px 0px 20px rgba(128, 0, 128, 1),      /* Bottom-left to top-right */
+            0px 0px 20px rgba(199, 255, 216, 1),   /* Top-right to bottom-left */
+            0px 0px 20px rgba(128, 0, 128, 1);     /* Bottom-right to top-left */
     }
 }
