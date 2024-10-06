@@ -63,4 +63,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         return re.test(String(email).toLowerCase());
     }
+
+    // Carousel Background Image Update
+    const carousel = document.getElementById('carouselExampleCaptions');
+    const section = document.getElementById('projects');
+
+    if (carousel && section) {
+        // Function to set the background image
+        function updateBackground() {
+            const activeItem = carousel.querySelector('.carousel-item.active img');
+            const imgSrc = activeItem.getAttribute('src');
+            section.style.backgroundImage = `url(${imgSrc})`;
+        }
+
+        // Run the function when the page loads and after each slide transition
+        updateBackground();
+        carousel.addEventListener('slid.bs.carousel', updateBackground);
+    }
 });
