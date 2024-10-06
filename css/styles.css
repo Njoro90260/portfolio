@@ -37,6 +37,10 @@ header nav ul li a {
 .navbar {
     background: linear-gradient(150deg, #0B2F9F 0%, #0B2F9F 25%, rgba(196, 187, 240, 1) 50%, #161D6F 75%, #161D6F 100%);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    width: 98%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 .btn {
     background-color: #98DED9;
@@ -73,6 +77,7 @@ section {
     display: flex;
     align-items: center;
     border-radius: 10px;
+    opacity: 0.7;
 }
 .about-items {
     display: flex;
