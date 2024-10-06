@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peter Njoroge - Portfolio</title>
-
     <!-- Bootstrap 5 CSS -->
-    <link rel="stylesheet" href="static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
     <!-- Font awesome icons -->
-    <link rel="stylesheet" href="static/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.6.0-web/css/all.min.css') }}">
+
 </head>
 
 <body>
@@ -59,7 +59,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <img src="static/images/Untitled design.jpg" alt="Profile Picture" class="img-fluid profile-img mb-3">
+                    <img src="static/images/Untitled design.jpg" alt="Profile Picture"
+                        class="img-fluid profile-img mb-3">
                 </div>
             </div>
         </section>
@@ -80,7 +81,8 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="static/images/gratisography-vr-glasses.jpg" class="d-block w-100 carousel-img" alt="...">
+                            <img src="{{ url_for('static', filename='images/gratisography-vr-glasses.jpg') }}" alt="VR Glasses" class="d-block w-100 carousel-img"
+                                alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Blog Post Management</h5>
                                 <p>A Django web app for managing blog posts and categories with an admin panel and
@@ -88,7 +90,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="static/images/gratisography-covered-in-confetti.jpg" class="d-block w-100" alt="...">
+                            <img src="{{ url_for('static', filename='images/gratisography-covered-in-confetti.jpg') }}" alt="Covered in Confetti">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Weather Data Analysis</h5>
                                 <p>This project involves collecting weather data, analyzing it, and visualizing key
@@ -97,8 +99,8 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="static/images/gratisography-chill-chinchilla-free-stock-photo.jpg" class="d-block w-100"
-                                alt="...">
+                            <img src="{{ url_for('static', filename='images/gratisography-chill-chinchilla-free-stock-photo.jpg') }}" alt="Chill Chinchilla">
+                                class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
@@ -181,10 +183,11 @@
 
 
     <!-- Bootstrap 5 JavaScript and Popper.js -->
-    <script src="static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Custom JavaScript -->
-    <script src="static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 
 </html>
