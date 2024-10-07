@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Njoroge - Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.6.0-web/css/all.min.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark mx-auto">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Peter Njoroge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" style="padding: 5px;">
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main" class="container-fluid">
+        <div class="pb-2 mb-2 border-bottom">
+            {% block page_header %}{% endblock page_header %}
+        </div>
+        <div>
+            {% block content %}{% endblock content %}
+        </div>
+    </main>
+
+    <footer class="footer text-center mt-5 w-100">
+        <!-- Grid container -->
+        <div class="conatiner p-4">
+            <!-- Section: social media -->
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://x.com/njoro90260" role="button"
+                    target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a class="btn btn-outline-light btn-floating m-1" href="mailto:wchegesalome@gmail.com" role="button"
+                    target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/cs_techguy12/"
+                    role="button" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.linkedin.com/in/peter-njoroge-71b689251/" role="button" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Njoro90260" role="button"
+                    target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+        </div>
+        <p>&copy; 2024 peternjoroge portfolio. All rights Reserved</p>
+    </footer>
+<!-- 
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+    </div> -->
+
+
+    <!-- Bootstrap 5 JavaScript and Popper.js -->
+    <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

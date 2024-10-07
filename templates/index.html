@@ -1,192 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Njoroge - Portfolio</title>
-    <!-- Bootstrap 5 CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
-    <!-- Font awesome icons -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.6.0-web/css/all.min.css') }}">
-
-</head>
-
-<body>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark mx-auto">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Peter Njoroge</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto" style="padding: 5px;">
-                    <li class="nav-item">
-                        <a class="nav-link btn" href="#about">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <main>
-        <!-- About Section -->
-        <section id="about" class="p-5 text-white row mx-auto" style="width: 90%;">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="mb-3">About Me</h2>
-                    <div class="d-flex align-items-center">
-                        <svg class="icon me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50"
-                            height="50">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 7c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0 10.5c-2.33 0-4.67-1.2-6-3.22C7.62 12.69 9.68 12 12 12s4.38.69 6 2.28c-1.33 2.02-3.67 3.22-6 3.22z" />
-                        </svg>
-                        <p>Hi! I'm Peter Njoroge, a web developer passionate about building responsive and visually
-                            appealing websites. With experience in Django, Bootstrap, and web design, I love bringing
-                            ideas to life on the web.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="static/images/Untitled design.jpg" alt="Profile Picture"
-                        class="img-fluid profile-img mb-3">
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="p-5 row mx-auto">
-            <h2 class="text-center">Projects</h2>
-            <div class="project-item">
-                <!-- Carousel -->
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ url_for('static', filename='images/gratisography-vr-glasses.jpg') }}" alt="VR Glasses" class="d-block w-100 carousel-img"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Blog Post Management</h5>
-                                <p>A Django web app for managing blog posts and categories with an admin panel and
-                                    Bootstrap styling. It integrates CRUD operations and user authentication.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ url_for('static', filename='images/gratisography-covered-in-confetti.jpg') }}" alt="Covered in Confetti">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Weather Data Analysis</h5>
-                                <p>This project involves collecting weather data, analyzing it, and visualizing key
-                                    metrics such as temperature, wind speed, and precipitation. It showcases skills in
-                                    data science and visualization.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ url_for('static', filename='images/gratisography-chill-chinchilla-free-stock-photo.jpg') }}" alt="Chill Chinchilla">
-                                class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Contact Section -->
-        <section id="contact" class="container my-5">
-            <h2 class="text-center mb-4">Contact</h2>
-            <div class="text-center">
-                <svg class="icon mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
+{% block content%}
+<!-- About Section -->
+<section id="about" class="p-5 text-white row mx-auto" style="width: 90%;">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="mb-3">About Me</h2>
+            <div class="d-flex align-items-center">
+                <svg class="icon me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
                     <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17v-4H8v4H5v-6H4l8-6 8 6h-1v6h-3v-4h-3v4h-2z" />
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 7c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0 10.5c-2.33 0-4.67-1.2-6-3.22C7.62 12.69 9.68 12 12 12s4.38.69 6 2.28c-1.33 2.02-3.67 3.22-6 3.22z" />
                 </svg>
-                <p>Email: <a href="mailto:peter@example.com">peter@example.com</a></p>
-                <p>LinkedIn: <a href="#">linkedin.com/in/peternjoroge</a></p>
+                <p>Hi! I'm Peter Njoroge, a web developer passionate about building responsive and visually
+                    appealing websites. With experience in Django, Bootstrap, and web design, I love bringing
+                    ideas to life on the web.</p>
             </div>
-        </section>
-    </main>
-    <footer class="footer text-center mt-5 w-100">
-        <!-- Grid container -->
-        <div class="conatiner p-4">
-            <!-- Section: social media -->
-            <section class="mb-4">
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a class="btn btn-outline-light btn-floating m-1" href="https://x.com/njoro90260" role="button"
-                    target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-
-                <a class="btn btn-outline-light btn-floating m-1" href="mailto:wchegesalome@gmail.com" role="button"
-                    target="_blank">
-                    <i class="fas fa-envelope"></i>
-                </a>
-
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/cs_techguy12/"
-                    role="button" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <a class="btn btn-outline-light btn-floating m-1"
-                    href="https://www.linkedin.com/in/peter-njoroge-71b689251/" role="button" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Njoro90260" role="button"
-                    target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-            </section>
         </div>
-        <p>&copy; 2024 peternjoroge portfolio. All rights Reserved</p>
-    </footer>
-
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
+        <div class="col-md-6 text-center">
+            <img src="static/images/Untitled design.jpg" alt="Profile Picture" class="img-fluid profile-img mb-3">
+        </div>
     </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="p-5 row mx-auto">
+    <h2 class="text-center">Projects</h2>
+    <div class="project-item">
+        <!-- Carousel -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='images/gratisography-vr-glasses.jpg') }}" alt="VR Glasses"
+                        class="d-block w-100 carousel-img" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Blog Post Management</h5>
+                        <p>A Django web app for managing blog posts and categories with an admin panel and
+                            Bootstrap styling. It integrates CRUD operations and user authentication.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='images/gratisography-covered-in-confetti.jpg') }}"
+                        alt="Covered in Confetti" class="d-block w-100 carousel-img">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Weather Data Analysis</h5>
+                        <p>This project involves collecting weather data, analyzing it, and visualizing key
+                            metrics such as temperature, wind speed, and precipitation. It showcases skills in
+                            data science and visualization.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='images/gratisography-chill-chinchilla-free-stock-photo.jpg') }}"
+                        alt="Chill Chinchilla" class="d-block w-100 carousel-img">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
 
 
-    <!-- Bootstrap 5 JavaScript and Popper.js -->
-    <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Contact Section -->
+<section id="contact" class="container my-5">
+    <h2 class="text-center mb-4">Contact</h2>
+    <div class="text-center">
+        <svg class="icon mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
+            <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17v-4H8v4H5v-6H4l8-6 8 6h-1v6h-3v-4h-3v4h-2z" />
+        </svg>
+        <p>Email: <a href="mailto:peter@example.com">peter@example.com</a></p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/peternjoroge</a></p>
+    </div>
+</section>
 
-    <!-- Custom JavaScript -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock content %}
 
 </body>
 
