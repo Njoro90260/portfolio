@@ -134,10 +134,9 @@ h2 {
 .about-section {
     display: flex;
     justify-content: space-between;
-    flex-direction: row; /* Changed from column to row */
-    gap: 20px; /* Optional: Adds spacing between the two sections */
+    flex-direction: row; 
 }
-#skills {
+section#skills {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
     height: auto;
     backdrop-filter: blur(25px);
@@ -147,7 +146,43 @@ h2 {
     opacity: 1;
     margin-top: 30px;
 }
-
+section#skills .skills {
+    position: relative;
+    z-index: 2;
+    /* Ensure content appears on top of the blur */
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    border-radius: 10px;
+    color: #f3f3f3;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 20px;
+    height: auto;
+    font-weight: bold;
+}
+section#skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: inherit;
+    /* Uses the background image from the section */
+    filter: blur(25px);
+    /* Apply blur */
+    opacity: 1;
+    /* Slight transparency */
+    z-index: 1;
+    /* Ensure the blur stays behind the content */
+    border-radius: 10px;
+    /* Match border radius */
+    transition: background-image 0.8s ease-in-out;
+}
 .carousel-img {
     object-fit: cover;
     border-radius: 10px;
@@ -162,7 +197,7 @@ section#projects {
     background-repeat: no-repeat;
     margin: 3rem auto;
     /* Center the section */
-    width: 90%;
+    width: 80%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -173,7 +208,9 @@ section#projects {
     border-radius: 10px;
     transition: background-image 0.8s ease-in-out;
 }
-
+#projects {
+    height: 50vh;
+}
 /* Blurred background layer */
 section#projects::before {
     content: '';
@@ -218,7 +255,7 @@ section#projects .project-item {
 
 .project-item:hover {
     cursor: pointer;
-    transform: scale(1);
+    transform: scale(1.05);
 }
 
 #contact svg.icon {

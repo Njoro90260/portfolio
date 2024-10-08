@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Carousel Background Image Update
     const carousel = document.getElementById('carouselExampleCaptions');
     const section = document.getElementById('projects');
+    const skill_section = document.getElementById('skills');
 
     if (carousel && section) {
         // Function to set the background image
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const activeItem = carousel.querySelector('.carousel-item.active img');
             const imgSrc = activeItem.getAttribute('src');
             section.style.backgroundImage = `url(${imgSrc})`;
+            skill_section.style.backgroundImage = `url(${imgSrc})`;
         }
 
         // Run the function when the page loads and after each slide transition
