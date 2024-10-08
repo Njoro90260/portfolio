@@ -2,30 +2,40 @@
 
 {% block content%}
 <!-- About Section -->
-<section id="about" class="p-5 text-white row mx-auto">
+<div class="container about-section">
     <div class="row">
-        <div class="col-md-6">
-            <h2 class="mb-3">About Me</h2>
-            <div class="d-flex align-items-center">
-                <svg class="icon me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
-                    <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 7c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0 10.5c-2.33 0-4.67-1.2-6-3.22C7.62 12.69 9.68 12 12 12s4.38.69 6 2.28c-1.33 2.02-3.67 3.22-6 3.22z" />
-                </svg>
-                <p>Hi! I'm Peter Njoroge, a web developer passionate about building responsive and visually
-                    appealing websites. With experience in Django, Bootstrap, and web design, I love bringing
-                    ideas to life on the web.</p>
+        <!-- First Section: About Me -->
+        <section id="about" class="p-5 text-white col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="mb-3">About Me</h2>
+                    <div class="d-flex align-items-center">
+                        <svg class="icon me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50"
+                            height="50">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 7c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0 10.5c-2.33 0-4.67-1.2-6-3.22C7.62 12.69 9.68 12 12 12s4.38.69 6 2.28c-1.33 2.02-3.67 3.22-6 3.22z" />
+                        </svg>
+                        <p>Hi! I'm Peter Njoroge, a web developer passionate about building responsive and visually
+                            appealing websites.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="static/images/Untitled design.jpg" alt="Profile Picture"
+                        class="img-fluid profile-img mb-3">
+                </div>
             </div>
-        </div>
-        <div class="col-md-6 text-center">
-            <img src="static/images/Untitled design.jpg" alt="Profile Picture" class="img-fluid profile-img mb-3">
-        </div>
+        </section>
+
+        <!-- Second Section: Skills -->
+        <section id="skills" class="p-5 text-white col-md-4">
+            <div class="about">
+                <h2 class="mb-3">Skills</h2>
+                <p>Skills: Django, Bootstrap, HTML, CSS, JavaScript, etc.</p>
+            </div>
+        </section>
     </div>
-    <section id="about" class="p-5 text-white row mx-auto">
-        <div class="col-md-6 about">
-            <p>skills</p>
-        </div>
-    </section>
-</section>
+</div>
+
 
 <!-- Projects Section -->
 <section id="projects" class="p-5 row mx-auto">
