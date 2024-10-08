@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Bebas_Neue';
+    src: url('static/fonts/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 :root {
     --dark1: #161D6F;
     --dark2: #0B2F9F;
@@ -10,7 +16,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Bebas_Neue;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -93,6 +99,8 @@ h1 {
 
 h2 {
     text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 .content {
@@ -127,7 +135,6 @@ h2 {
     align-items: center;
     border-radius: 10px;
     opacity: 1;
-    backdrop-filter: blur(25px);
     animation: glow 15s ease-in-out infinite;
 }
 
@@ -136,6 +143,19 @@ h2 {
     justify-content: space-between;
     flex-direction: row; 
 }
+.clipped-text {
+    font-size: 25px; /* Increase the font size */
+    font-weight: bold;
+    line-height: 1.3; /* Increase line-height for better readability */
+    background-image: url('../static/images/text-pic.jpg') no-repeat center center;
+    background-size: cover;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Optional: Center the text */
+}
+
 section#skills {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
     height: auto;
@@ -207,6 +227,11 @@ section#projects {
     border: 1px solid #f3f3f3;
     border-radius: 10px;
     transition: background-image 0.8s ease-in-out;
+}
+.project-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; 
 }
 #projects {
     height: 50vh;
