@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     // Carousel Background Image Update
-    const carousel = document.getElementById('carouselExampleCaptions');
+    const carousel = document.getElementById('projectsCarousel');
     const section = document.getElementById('projects');
     const skill_section = document.getElementById('skills');
     const technologies = document.getElementById('technologies');
@@ -65,4 +65,71 @@ document.addEventListener('DOMContentLoaded', function () {
     aboutDescription.style.webkitBackgroundClip = "text"; // For Webkit browsers
     aboutDescription.style.backgroundClip = "text"; // For other browsers
     aboutDescription.style.webkitTextFillColor = "transparent"; // For Webkit browsers
+
+    // Canvas Drawings.
+    const canvas = document.getElementById("starCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = [];
+    const numStars = 100; // Number of dots
+
+    function randomColor() {
+        const colors = ['#ffffff', '#ff9a9e', '#fad0c4', '#fbc2eb', '#a18cd1', '#fbc2eb', '#ff9a9e'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // Function to create stars
+    function createStar() {
+        return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 3 + 1, // Size of dots
+            color: randomColor(),
+            dx: (Math.random() - 0.5) * 2, // Horizontal speed
+            dy: (Math.random() - 0.5) * 2  // Vertical speed
+        };
+    }
+
+    // Initialize stars
+    for (let i = 0; i < numStars; i++) {
+        stars.push(createStar());
+    }
+
+    // Function to draw stars
+    function drawStar(star) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = star.color;
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    // Function to animate stars
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        stars.forEach(star => {
+            star.x += star.dx;
+            star.y += star.dy;
+
+            // Bounce stars off the edges of the canvas
+            if (star.x < 0 || star.x > canvas.width) star.dx *= -1;
+            if (star.y < 0 || star.y > canvas.height) star.dy *= -1;
+
+            drawStar(star);
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Adjust canvas size when window is resized
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
 });

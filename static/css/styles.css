@@ -14,18 +14,40 @@
     --dark2-rgba: rgba(224, 229, 182, 1);
     --light1-rgba: rgba(250, 237, 206, 1);
     --light2-rgba: rgba(254, 250, 224, 1);
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
     font-family: Bebas_Neue;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
     animation: gradient 15s ease infinite;
-    background: linear-gradient(150deg, var(--dark1) 0%, var(--dark1) 20%, var(--light2-rgba) 50%, var(--dark2) 80%, var(--dark2) 100%);
-    background-size: 400% 400%;
+    /* background: linear-gradient(150deg, var(--dark1) 0%, var(--dark1) 20%, var(--light2-rgba) 50%, var(--dark2) 80%, var(--dark2) 100%); */
+    /* background-size: 400% 400%; */
     /* color: #E7E7AA; */
+    background: #000;
 }
+
+/* Make the canvas cover the entire viewport */
+#starCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Ensure it stays behind the content */
+    background-color: black; /* Optional: Set a default background */
+}
+
+/* Ensure the content appears on top */
+.about-section, .project-section {
+    position: relative;
+    z-index: 1;
+}
+
 
 header {
     color: #fff;
@@ -246,6 +268,11 @@ section#skills::before {
     padding: 1rem;
     margin-left: 20px;
 }
+.project-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 /* #projects Section Styling */
 section#projects {
@@ -421,6 +448,40 @@ footer {
 .snowflake:nth-child(6) {
     left: 60%;
     animation-duration: 11s, 5s;
+}
+.stars, .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    background: url('https://raw.githubusercontent.com/vasanthv/starry-sky-background-animation/master/stars.png') repeat;
+    animation: move-stars 100s linear infinite;
+}
+
+.twinkling {
+    background: url('https://raw.githubusercontent.com/vasanthv/starry-sky-background-animation/master/twinkling.png') repeat;
+    animation: move-twinkling 200s linear infinite;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+@keyframes move-stars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 10000px; }
+}
+
+@keyframes move-twinkling {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 10000px; }
 }
 
 /* Responsive styling */
