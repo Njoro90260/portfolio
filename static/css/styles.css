@@ -25,21 +25,15 @@ body {
     padding: 0;
     height: 100%;
     animation: gradient 15s ease infinite;
-    /* background: linear-gradient(150deg, var(--dark1) 0%, var(--dark1) 20%, var(--light2-rgba) 50%, var(--dark2) 80%, var(--dark2) 100%); */
-    /* background-size: 400% 400%; */
-    /* color: #E7E7AA; */
-    background: #000;
+    background: linear-gradient(150deg, var(--dark1) 0%, var(--dark1) 20%, var(--light2-rgba) 50%, var(--dark2) 80%, var(--dark2) 100%); 
+    background-size: 400% 400%;
+    color: #E7E7AA;
 }
 
 /* Make the canvas cover the entire viewport */
 #starCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: -1; /* Ensure it stays behind the content */
-    background-color: black; /* Optional: Set a default background */
+ 
+    z-index: -1;
 }
 
 /* Ensure the content appears on top */
@@ -161,7 +155,7 @@ h2 {
 }
 
 
-#about {
+section#about {
     /* background:
         linear-gradient(45deg, var(--dark1) 25%, transparent 25%),
         linear-gradient(-45deg, var(--dark2) 25%, transparent 25%),
@@ -180,6 +174,7 @@ h2 {
     opacity: 1;
     animation: glow 15s ease-in-out infinite;
 }
+
 
 .about-section {
     display: flex;
@@ -201,8 +196,6 @@ section#skills {
 section#skills .skills {
     position: relative;
     z-index: 2;
-    /* Ensure content appears on top of the blur */
-    /* background-color: rgba(0, 0, 0, 0.8); */
     border-radius: 10px;
     color: #f3f3f3;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
@@ -225,33 +218,23 @@ section#skills::before {
     background-position: center;
     background-repeat: no-repeat;
     background-image: inherit;
-    /* Uses the background image from the section */
     filter: blur(25px);
-    /* Apply blur */
     opacity: 1;
-    /* Slight transparency */
-    z-index: 1;
-    /* Ensure the blur stays behind the content */
     border-radius: 10px;
-    /* Match border radius */
     transition: background-image 0.8s ease-in-out;
 }
-/* Carousel Image Styling */
+
 .carousel-img {
     object-fit: cover;
     border-radius: 10px;
 }
-
-/* Overlay Effect on Carousel Items */
 .carousel-item::before {
     content: "";
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
 }
 
 /* Carousel Caption Styling */
@@ -294,7 +277,6 @@ section#projects {
 /* Blurred Background Layer for #projects */
 section#projects::before {
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -305,7 +287,6 @@ section#projects::before {
     background-image: inherit;
     filter: blur(25px);
     opacity: 1;
-    z-index: 1;
     border-radius: 10px;
     transition: background-image 0.8s ease-in-out;
 }
@@ -357,7 +338,6 @@ section#technologies .tech {
 /* Blurred Background Layer for #technologies */
 section#technologies::before {
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -368,7 +348,6 @@ section#technologies::before {
     background-image: inherit;
     filter: blur(25px);
     opacity: 1;
-    z-index: 1;
     border-radius: 10px;
     transition: background-image 0.8s ease-in-out;
 }
