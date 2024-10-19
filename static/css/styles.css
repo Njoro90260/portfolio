@@ -34,10 +34,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Pushes the canvas behind the content */
+    z-index: -1; 
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Ensures that the canvas doesn't block interactions */
+    pointer-events: none; 
 }
 
 
