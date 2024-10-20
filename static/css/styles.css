@@ -60,6 +60,10 @@ header nav ul li a {
     align-items: center;
     margin-top: 1rem;
 }
+.logo {
+    width: 20%;
+    height: auto;
+}
 
 .btn {
     background-color: var(--light1);
