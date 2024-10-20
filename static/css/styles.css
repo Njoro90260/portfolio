@@ -154,11 +154,7 @@ h2 {
     opacity: 1;
     animation: glow 15s ease-in-out infinite;
 }
-.about-section {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row; 
-}
+
 section#skills {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
     height: auto;
@@ -209,100 +205,43 @@ section#skills::before {
 .carousel-img {
     object-fit: cover;
     border-radius: 10px;
-}
-.carousel-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #f3f3f3;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    z-index: 2;
-    width: 90%;
-    text-align: left;
-    padding: 10px;
-    margin-left: 20px;
+    height: 400px;
 }
 
-/* Styling for the #projects section */
+.carousel-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f3f3f3;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    width: 90%;
+    text-align: center;
+}
+
 section#projects {
-    position: relative;
-    /* Ensures the content stays on top of the background */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     margin: 3rem auto;
-    /* Center the section */
-    /* width: 80%; */
-    height: auto;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: auto;
     color: #f3f3f3;
     border: 1px solid #f3f3f3;
     border-radius: 10px;
-    transition: background-image 0.8s ease-in-out;
-}
-.project-section {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row; 
-}
-#projects {
-    height: auto;
-}
-/* Blurred background layer */
-section#projects::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: inherit;
-    /* Uses the background image from the section */
-    filter: blur(25px);
-    /* Apply blur */
-    opacity: 1;
-    /* Slight transparency */
-    z-index: 1;
-    /* Ensure the blur stays behind the content */
-    border-radius: 10px;
-    /* Match border radius */
+    background-color: #333; /* Add a dark background color */
     transition: background-image 0.8s ease-in-out;
 }
 
-/* Content inside the section stays sharp */
-section#projects .project-item {
-    position: relative;
+.project-item {
     z-index: 2;
-    /* Ensure content appears on top of the blur */
-    /* background-color: rgba(0, 0, 0, 0.8); */
     border-radius: 10px;
     color: #f3f3f3;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
-    transform: scale(1);
     transition: transform 0.3s ease-in-out;
-    padding: 20px;
-    /* margin: 1rem 0; */
-    /* width: 100%; */
     font-weight: bold;
+    height: auto;
 }
-
 
 .project-item:hover {
     cursor: pointer;
@@ -311,54 +250,11 @@ section#projects .project-item {
 
 section#technologies {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
-    height: auto;
     backdrop-filter: blur(25px);
-    animation: glow 15s ease-in-out infinite;
-    animation: glow 15s ease-in-out infinite;
     border-radius: 10px;
-    opacity: 1;
     margin-top: 46px;
 }
-section#technologies .tech {
-    position: relative;
-    z-index: 2;
-    /* Ensure content appears on top of the blur */
-    /* background-color: rgba(0, 0, 0, 0.8); */
-    border-radius: 10px;
-    color: #f3f3f3;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease-in-out;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 20px;
-    height: auto;
-    font-weight: bold;
-}
-section#technologies::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: inherit;
-    /* Uses the background image from the section */
-    filter: blur(25px);
-    /* Apply blur */
-    opacity: 1;
-    /* Slight transparency */
-    z-index: 1;
-    /* Ensure the blur stays behind the content */
-    border-radius: 10px;
-    /* Match border radius */
-    transition: background-image 0.8s ease-in-out;
-}
-#technologies {
-    height: auto;
-}
+
 #contact svg.icon {
     width: 40px;
     height: 40px;
