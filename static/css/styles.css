@@ -16,7 +16,6 @@
 }
 
 body {
-    font-family: Bebas_Neue;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -107,7 +106,9 @@ h2 {
     font-size: 25px;
     font-weight: bolder;
 }
-
+li {
+    list-style: none;
+}
 .content {
     display: flex;
     align-items: center;
@@ -127,8 +128,9 @@ h2 {
     max-width: 500px;
 }
 .clipped-text {
-    font-size: 30px; /* Font size for better visibility */
+    font-size: 40px; /* Font size for better visibility */
     font-weight: bold;
+    font-family: 'Bebas_Neue';
     line-height: 1.3;
     color: transparent; /* Initially transparent */
     -webkit-background-clip: text;
@@ -187,6 +189,12 @@ section#skills .skills {
     height: auto;
     font-weight: bold;
 }
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 section#skills::before {
     content: '';
     position: absolute;
@@ -224,6 +232,7 @@ section#skills::before {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     width: 90%;
     text-align: center;
+    font-size: 40px;
 }
 
 section#projects {
